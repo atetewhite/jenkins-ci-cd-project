@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                label 'Node1'
+                label 'Node'
             }
             steps {
                 echo 'Building the application'
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             agent {
-                label 'Node1'
+                label 'Node'
             }
             steps {
                 echo 'Running tests'
@@ -53,7 +53,7 @@ pipeline {
                 // Send email for failed build
                 mail to: 'kelvinatete@yahoo.com',
                      subject: "Build Failed - ${currentBuild.fullDisplayName}",
-                     body: "Oops! The build failed. \n\nCheck console output at ${Build_URL}"
+                     body: "Oops! The build failed.\n\nCheck console output at ${Build_URL}"
             }
         }
     }
