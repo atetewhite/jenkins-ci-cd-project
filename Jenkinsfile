@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
+            agent {
                 label 'Node1'
             }
             steps {
