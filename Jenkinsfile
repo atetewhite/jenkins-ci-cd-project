@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             agent {
-                label 'Node'
+                label 'Node1'
             }
             steps {
                 echo 'Building the application'
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                label 'Node'
+                label 'Node1'
             }
             steps {
                 echo 'Running tests'
